@@ -1,0 +1,26 @@
+<template name="header">
+    <div class="ui container">
+        <div class="ui inverted menu">
+            <a class="item">
+                {{_ "home" }}
+            </a>
+            <a class="item">
+                {{_ "music" }}
+            </a>
+            <a class="item active">
+                {{_ "projects" }}
+            </a>
+            <a class="item">
+                {{_ "resume" }}
+            </a>
+            <div class="ui right dropdown item">
+                {{_ "language" }}
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div id="select-en" class="item"><i class="us flag"></i>{{_ "en" }}</div>
+                    <div id="select-cn" class="item"><i class="cn flag"></i>{{_ "zh" }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
