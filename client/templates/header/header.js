@@ -2,9 +2,17 @@ Template.header.onRendered(function(){
 
 });
 
+Template.header.helpers({
+
+});
+
 Template.header.events({
     "click .dropdown": function(){
         $('.ui.dropdown').dropdown();
+    },
+    "click #open-sidebar": function(event, template){
+        event.preventDefault();
+        $('.ui.sidebar').sidebar('toggle');
     },
     "click #select-en": function(){
         TAPi18n.setLanguage("en")
