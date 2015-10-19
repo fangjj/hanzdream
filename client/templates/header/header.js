@@ -12,7 +12,22 @@ Template.header.events({
     },
     "click #open-sidebar": function(event, template){
         event.preventDefault();
-        $('.ui.sidebar').sidebar('toggle');
+        $('.ui.sidebar').sidebar('setting', {
+            defaultTransition: {
+                computer: {
+                    left   : 'uncover'
+                },
+                mobile: {
+                    left   : 'overlay'
+                }
+            },
+            onShow: function(){
+                $('body').css('overflow','hidden');
+            },
+            onHidden: function(){
+                $('body').css('overflow','initial');
+            }
+        }).sidebar('toggle');
     },
     "click #select-en": function(){
         TAPi18n.setLanguage("en")

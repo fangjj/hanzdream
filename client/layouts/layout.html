@@ -1,4 +1,7 @@
 <template name="layout">
-    {{> header }}
-    {{> yield }}
+    {{> sidebar }}
+    {{# pusher }}
+        {{> header }}
+        {{> yield }}
+    {{/ pusher }}
 </template>
