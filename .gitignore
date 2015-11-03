@@ -6,3 +6,4 @@ client/lib/semantic-ui/semantic.less
 client/lib/semantic-ui/theme.import.less
 hanz.pem
 mup.json
+settings.json
