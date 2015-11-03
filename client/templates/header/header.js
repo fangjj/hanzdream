@@ -19,7 +19,7 @@ Template.header.events({
 
         }
     },
-    "touchend #open-sidebar, click #open-sidebar": function(event, template){
+    "click #open-sidebar": function(event, template){
         event.preventDefault();
         //event.stopPropagation();
         $('.ui.sidebar').sidebar('setting', {

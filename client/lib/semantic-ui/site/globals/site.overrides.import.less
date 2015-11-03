@@ -1,15 +1,8 @@
 /*******************************
          Site Overrides
 *******************************/
-/* nav & sidenav */
-//.body-height{
-//  min-height: 720px !important;
-//}
 html{
   overflow-x: hidden;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-
 }
 .navbar{
   width:100%;
@@ -24,14 +17,14 @@ a.home-btn{
   margin-top: 20px;
 }
 .lang-list .item:before{
-  background: none !important;
+  background: none;
 }
 .footer.segment{
   //position: absolute;
   //bottom: 0;
   margin-top: 50px !important;
   width: 100%;
-  padding: 2px !important;
+  padding: 2px;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
@@ -46,7 +39,22 @@ a.home-btn{
   margin-bottom: 10px;
 }
 .contact-me i{
-  vertical-align: text-top !important;
-  font-size: 1.2em !important;
+  vertical-align: text-top;
+  font-size: 1.2em;
+}
+#social-media-icons {
+  margin-top: 10px;
+  a{
+    color: black;
+  }
+  i{
+    font-size: 2.2em;
+  }
+  .facebook{
+    color: blue;
+  }
+  .column{
+    margin: 10px 0;
+  }
 }
 /* home END */
