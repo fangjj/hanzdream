@@ -1,8 +1,72 @@
 <template name="home">
-    <div class="ui page grid body-height">
-        <div class="row">
-            <div class="column">123</div>
+        <div class=" row">
+            <h2 class="ui center aligned header column">
+                <img src="/avater.jpg" class="ui circular image">
+                <div class="">
+                        Hanz Luo
+                    <div class="sub header">Full-stack Web Developer</div>
+                </div>
+            </h2>
+        </div>
+        <div class="ui doubling row">
+            <div class="eight wide mobile four wide tablet four wide computer column">
+                <h4><i class="terminal icon"></i>Server</h4>
+                <p><i class="green check square icon"></i>Ubuntu, CentOS</p>
+                <p><i class="green check square icon"></i>DNS Config</p>
+                <p><i class="green check square icon"></i>Nginx/SSL</p>
+                <p><i class="green check square icon"></i>MongoDB, MySQL</p>
+            </div>
+            <div class="eight wide mobile four wide tablet four wide computer column">
+                <h4><i class="settings icon"></i>Frameworks</h4>
+                <p><i class="green check square icon"></i>Meteor (node.js)</p>
+                <p><i class="green check square icon"></i>Sails.js (node.js)</p>
+                <p><i class="green check square icon"></i>Sass/Less</p>
+                <p><i class="green check square icon"></i>JQuery</p>
+            </div>
+            <div class="eight wide mobile four wide tablet four wide computer column">
+                <h4><i class="plug icon"></i>API Plugins</h4>
+                <p><i class="green check square icon"></i>Google Maps</p>
+                <p><i class="green check square icon"></i>Yelp</p>
+                <p><i class="green check square icon"></i>Stripe</p>
+                <!--<p><i class="green check square icon"></i>Edmunds</p>-->
+                <p><i class="green check square icon"></i>Facebook</p>
+            </div>
+            <div class="eight wide mobile four wide tablet four wide computer column">
+                <h4><i class="code icon"></i>UI</h4>
+                <p><i class="green check square icon"></i>Semantic UI</p>
+                <p><i class="green check square icon"></i>Bootstrap</p>
+                <p><i class="green check square icon"></i>Materialize</p>
+                <p><i class="green check square icon"></i>Ionic</p>
+            </div>
+        </div>
+    <div class="ui divider"></div>
+    <div class="ui stackable row">
+        <div class="ui center aligned four wide column contact-me">
+            <h2><i class="mail outline icon"></i>Contact Me</h2>
+            <p>Hi there, welcome to contact me!</p>
+        </div>
+        <div class="ten wide column">
+            <form class="ui form">
+                <div class="fields">
+                    <div class="six wide field">
+                        <label>Your Name</label>
+                        <input placeholder="Your Name" type="text">
+                    </div>
+                    <div class="ten wide field">
+                        <label>Contact Email</label>
+                        <input placeholder="Contact Email" type="text">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Title</label>
+                    <input placeholder="Title" type="text">
+                </div>
+                <div class="field">
+                    <label>Message</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <button class="ui button" type="submit">Submit</button>
+            </form>
         </div>
     </div>
-
 </template>

@@ -1,16 +1,52 @@
 /*******************************
          Site Overrides
 *******************************/
-//.ios {
-//  overflow-x: hidden;
-//  -webkit-overflow-scrolling: touch;
+/* nav & sidenav */
+//.body-height{
+//  min-height: 720px !important;
 //}
-//.ios {
-//  height: initial !important;
-//}
-.body-height{
-  height: 600px;
+html{
+  overflow-x: hidden;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+
 }
 .navbar{
   width:100%;
 }
+.mobile .navbar{
+  padding: 0 15px;
+}
+a.home-btn{
+  padding: 0 6px 0 10px !important;
+}
+.lang-list{
+  margin-top: 20px;
+}
+.lang-list .item:before{
+  background: none !important;
+}
+.footer.segment{
+  //position: absolute;
+  //bottom: 0;
+  margin-top: 50px !important;
+  width: 100%;
+  padding: 2px !important;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .ui.grid.container {
+    margin: 14px 0 !important;
+  }
+}
+/* nav & sidenav END */
+
+/* home */
+.ui.center.aligned.header img{
+  margin-bottom: 10px;
+}
+.contact-me i{
+  vertical-align: text-top !important;
+  font-size: 1.2em !important;
+}
+/* home END */

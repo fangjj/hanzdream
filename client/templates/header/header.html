@@ -1,61 +1,65 @@
 <template name="header">
-    <!--<div class="pusher">-->
-        <!--anything here-->
-    <!--</div>-->
+    <div class="ui grid">
 
-    <div class="ui page grid">
-        <div class="computer tablet only row">
-            <div class="ui inverted menu navbar">
-                <div class="item">
-                    Hanzdream
-                </div>
-                <a class="item">
-                    {{_ "home" }}
-                </a>
-                <a class="item">
-                    {{_ "music" }}
-                </a>
-                <a class="item active">
-                    {{_ "projects" }}
-                </a>
-                <a class="item">
-                    {{_ "resume" }}
-                </a>
-                <div class="ui right dropdown item">
-                    {{_ "language" }}
-                    <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <div id="select-en" class="item"><i class="us flag"></i>{{_ "en" }}</div>
-                        <div id="select-cn" class="item"><i class="cn flag"></i>{{_ "zh" }}</div>
+            <div class="computer tablet only row">
+                <div class="ui inverted menu navbar">
+                    <div class="ui page container">
+                        <a href="/" class="item home-btn">
+                            <i href="/" class="large home icon"></i>Hanzdream
+                        </a>
+                        <a href="/music" class="item">
+                            {{_ "music" }}
+                        </a>
+                        <a href="/projects" class="item">
+                            {{_ "projects" }}
+                        </a>
+                        <a href="/resume" class="item">
+                            {{_ "resume" }}
+                        </a>
+                        <div id="select-lang" class="ui right dropdown item">
+                            {{_ "language" }}
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <div id="select-en" class="item"><i class="us flag"></i>{{_ "en" }}</div>
+                                <div id="select-cn" class="item"><i class="cn flag"></i>{{_ "zh" }}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="mobile only row">
-            <div class="ui inverted navbar menu">
+            <div class="mobile only row">
+                <div class="ui inverted navbar menu">
 
-                <a href="#" id="open-sidebar" class="left item">
-                    <i class="sidebar icon"></i>
-                </a>
-
-
-                <a href="" class="brand item">Project Name</a>
+                    <a id="open-sidebar" class="left item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                </div>
             </div>
-        </div>
+
     </div>
 </template>
 
 <template name="sidebar">
     <div class="ui sidebar thin inverted vertical menu">
-        <a class="item">
-            Home
-        </a>
-        <a class="item">
-            2
-        </a>
-        <a class="item">
-            3
-        </a>
+            <a href="/" class="item">
+                <i href="/" class="home icon"></i>
+                {{_ "home" }}
+            </a>
+            <a href="/music" class="item">
+                {{_ "music" }}
+            </a>
+            <a href="/projects" class="item">
+                {{_ "projects" }}
+            </a>
+            <a href="/resume" class="item">
+                {{_ "resume" }}
+            </a>
+            <div class="lang-list">
+
+                <a id="select-en" class="item"><i class="us flag"></i>{{_ "en" }}</a>
+                <a id="select-cn" class="item"><i class="cn flag"></i>{{_ "zh" }}</a>
+            </div>
+
     </div>
 </template>
 
