@@ -16,7 +16,8 @@
     "segment": true,
     "form": true,
     "button": true,
-    "card": true
+    "card": true,
+    "accordion": true
   },
   "themes": {
     "amazon": false,
