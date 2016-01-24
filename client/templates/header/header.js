@@ -19,7 +19,7 @@ Template.header.events({
 
         }
     },
-    "click #open-sidebar": function(event, template){
+    "click #open-sidebar, touchend #open-sidebar": function(event, template){
         event.preventDefault();
         //event.stopPropagation();
         $('.ui.sidebar').sidebar('setting', {
@@ -66,7 +66,7 @@ Template.header.events({
 });
 
 Template.sidebar.events({
-    "click #select-en": function(){
+    "click #select-en, touchend #select-en": function(){
         TAPi18n.setLanguage("en")
             .done(function () {
                 //$('.ui.sidebar').sidebar('hide');
@@ -75,7 +75,7 @@ Template.sidebar.events({
                 console.log(error_message);
             });
     },
-    "click #select-cn": function(){
+    "click #select-cn, touchend #select-cn": function(){
         TAPi18n.setLanguage("zh")
             .done(function () {
                 localStorage.setItem('hanzDreamLang','zh');
@@ -84,13 +84,15 @@ Template.sidebar.events({
                 console.log(error_message);
             });
     },
-    "click a": function(event, template){
-        if($(event.target).attr('href')) {
-            let targetHref = $(event.target).attr('href');
+    "click a, touchend a": function(event, template){
+        event.preventDefault();
+        let targetHref = $(event.target).attr('href');
+        if(targetHref) {
             Session.set('currentNav', targetHref);
             $("a[href='" + targetHref + "']").addClass('active');
             $("a[href!='" + targetHref + "']").removeClass('active');
             $('.ui.sidebar').sidebar('hide');
+            Router.go(targetHref);
         }
     }
 });

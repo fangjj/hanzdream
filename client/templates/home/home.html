@@ -19,7 +19,7 @@
             <div class="eight wide mobile four wide tablet four wide computer column">
                 <h4><i class="settings icon"></i>Frameworks</h4>
                 <p><i class="green check square icon"></i>Meteor (node.js)</p>
-                <p><i class="green check square icon"></i>Sails.js (node.js)</p>
+                <p><i class="green check square icon"></i>React</p>
                 <p><i class="green check square icon"></i>Sass/Less</p>
                 <p><i class="green check square icon"></i>JQuery</p>
             </div>
@@ -46,36 +46,73 @@
             <p>Hi there, welcome to contact me!</p>
             <div class="ui grid">
                 <div id="social-media-icons" class="centered row">
-                    <div href="" id="facebook" class="two wide mobile twelve wide computer column"><a href=""><i class="facebook square icon"></i>Facebook</a></div>
-                    <div class="two wide mobile twelve wide computer column"><a href=""><i class="github icon"></i>Github</a></div>
-                    <div class="two wide mobile twelve wide computer column"><a href=""><i class="linkedin square icon"></i>LinkedIn</a></div>
+                    <div class="three wide mobile twelve wide computer column" tabindex="0">
+                        <a class="icon-link" href="https://www.facebook.com/hanzhang.luo" target="_blank">
+                            <i class="facebook square icon"></i>
+                            <label>Facebook</label>
+                        </a>
+                        <div class="ui grey pointing label animated">
+                            <a class="label-link" href="https://www.facebook.com/hanzhang.luo" target="_blank">Facebook</a>
+                        </div>
+                    </div>
+                    <div class="three wide mobile twelve wide computer column" tabindex="1">
+                        <a class="icon-link" href="https://github.com/lhz516/" target="_blank">
+                            <i class="github icon"></i>
+                            <label>Github</label>
+                        </a>
+                        <div class="ui grey pointing label animated">
+                            <a class="label-link" href="https://github.com/lhz516/" target="_blank">Github</a>
+                        </div>
+                    </div>
+                    <div class="three wide mobile twelve wide computer column" tabindex="2">
+                        <a class="icon-link" href="https://www.linkedin.com/in/hanzhang-luo-81103082?trk=hp-identity-name" target="_blank">
+                            <i class="linkedin square icon"></i>
+                            <label>LinkedIn</label>
+                        </a>
+                        <div class="ui grey pointing label animated">
+                            <a class="label-link" href="https://www.linkedin.com/in/hanzhang-luo-81103082?trk=hp-identity-name" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
 
         <div class="ten wide column">
-            <form class="ui form">
+            <form class="ui contact form">
                 <div class="fields">
-                    <div class="six wide field">
+                        <div class="six wide field">
                         <label>Your Name</label>
-                        <input placeholder="Your Name" type="text">
+                        <input placeholder="Your Name" name="name" type="text">
                     </div>
                     <div class="ten wide field">
                         <label>Contact Email</label>
-                        <input placeholder="Contact Email" type="text">
+                        <input placeholder="Contact Email" name="email" type="text">
                     </div>
                 </div>
                 <div class="field">
                     <label>Title</label>
-                    <input placeholder="Title" type="text">
+                    <input placeholder="Title" name="title" type="text">
                 </div>
                 <div class="field">
                     <label>Message</label>
-                    <textarea rows="4"></textarea>
+                    <textarea rows="4" name="message"></textarea>
                 </div>
-                <button class="ui button" type="submit">Submit</button>
+                <button class="ui green button" type="submit">Submit</button>
+                <div class="ui error message"></div>
             </form>
+        </div>
+    </div>
+    <div class="ui msg small modal">
+        <div class="ui content center aligned container">
+                <i class="huge check circle icon"></i>
+            <p>Submit successful! Thanks for contacting me.</p>
+        </div>
+
+        <div class="actions">
+            <div class="ui positive button">
+                Close
+            </div>
         </div>
     </div>
 </template>

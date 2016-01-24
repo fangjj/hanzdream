@@ -2,13 +2,13 @@
          Site Overrides
 *******************************/
 html{
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 .navbar{
   width:100%;
 }
 .mobile .navbar{
-  padding: 0 15px;
+  //padding: 0 15px;
 }
 a.home-btn{
   padding: 0 6px 0 10px !important;
@@ -29,7 +29,7 @@ a.home-btn{
 }
 @media only screen and (max-width: 767px) {
   .ui.grid.container {
-    margin: 14px 0 !important;
+    //margin: 14px 0 !important;
   }
 }
 /* nav & sidenav END */
@@ -45,16 +45,66 @@ a.home-btn{
 #social-media-icons {
   margin-top: 10px;
   a{
+    transition-duration: .5s;
     color: black;
+    opacity: .85;
+    display: block;
+  }
+  a:hover {
+    opacity: 1;
   }
   i{
+    display: inline-block;
     font-size: 2.2em;
+    color: @grey;
+    transition-duration: .5s;
   }
-  .facebook{
-    color: blue;
+  label {
+    cursor: pointer;
+  }
+  .facebook.active,.icon-link:hover .facebook,.facebook:hover {
+    color: #3b5998;
+  }
+  .github.active,.icon-link:hover .github,.github:hover {
+    color: black;
+  }
+  .linkedin.active,.icon-link:hover .linkedin,.linkedin:hover {
+    color: #0077b5;
   }
   .column{
     margin: 10px 0;
+  }
+  .column:focus {
+    outline: 0;
+  }
+  .pointing {
+    top: 30px;
+    margin-right: 50%;
+    right: -37px;
+    position: absolute;
+    width: 74px;
+    display: none;
+    a {
+      color: white;
+      opacity: .8;
+      text-decoration: underline;
+    }
+    a:hover {
+      opacity: 1;
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  #social-media-icons {
+    label {
+      display: none;
+    }
+    .column {
+      text-align: center !important;
+    }
+    .icon-link {
+      height: 5px;
+    }
   }
 }
 /* home END */
@@ -68,4 +118,30 @@ audio{
   width: 100%;
   max-width: 750px;
 }
+
 /* music END */
+
+/* resume */
+#my-resume {
+  text-align: center;
+  width: 100%;
+  height: 1090px;
+  margin-bottom: 10px;
+  p {
+    color: #828282;
+  }
+  .loader {
+    z-index: 1;
+  }
+  embed {
+    position: relative;
+    z-index: 2;
+    max-width: 751px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #my-resume {
+    height: 700px;
+  }
+}
+/* resume END */

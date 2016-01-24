@@ -6,7 +6,6 @@
 
 meteor-base             # Packages every Meteor app needs to have
 #mobile-experience       # Packages for a great mobile UX
-fastclick
 mongo                   # The database Meteor supports right now
 blaze-html-templates    # Compile .html files into Meteor Blaze views
 session                 # Client-side reactive dictionary for your app
@@ -23,3 +22,6 @@ semantic:ui
 flemay:less-autoprefixer
 iron:router
 tap:i18n
+natestrauser:animate-css
+aldeed:collection2
+check
