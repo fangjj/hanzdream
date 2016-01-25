@@ -11,7 +11,12 @@ html{
   //padding: 0 15px;
 }
 a.home-btn{
-  padding: 0 6px 0 10px !important;
+  //padding: 0 6px 0 10px !important;
+}
+#select-lang {
+  .menu {
+    top: 35px;
+  }
 }
 .lang-list{
   margin-top: 20px;
@@ -32,9 +37,52 @@ a.home-btn{
     //margin: 14px 0 !important;
   }
 }
+.white {
+  color: white !important;
+  .sub.header {
+    color: rgba(255,255,255,0.6) !important;
+  }
+}
+.navbar .item:hover {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3) !important;
+}
+.navbar.homepage {
+  .item {
+    color: rgba(255, 255, 255, 0.87) !important;
+  }
+  .item:hover {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5) !important;
+  }
+  .item.active {
+    color: rgba(255, 255, 255, 1) !important;
+    border-color: white !important;
+  }
+}
 /* nav & sidenav END */
 
 /* home */
+
+#bg-img {
+  margin-top: -60px;
+  height: 550px;
+  overflow: hidden;
+  color: white;
+  .headers {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 130px;
+  }
+  .bg {
+    width: 100%;
+  }
+}
+.skills {
+  //position: relative;
+  //z-index: 1;
+  //background-color: white;
+  margin-top: 30px;
+}
 .ui.center.aligned.header img{
   margin-bottom: 10px;
 }

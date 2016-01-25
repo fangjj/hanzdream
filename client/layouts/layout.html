@@ -2,16 +2,8 @@
     {{> sidebar }}
     {{# pusher }}
         {{> header }}
-        {{# gridContainer }}
-            {{> yield }}
-        {{/ gridContainer}}
+        {{> yield }}
         {{> footer }}
     {{/ pusher }}
 
-</template>
-
-<template name="gridContainer">
-    <div class="ui grid container body-height">
-        {{> UI.contentBlock}}
-    </div>
 </template>

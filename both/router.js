@@ -3,6 +3,9 @@ Router.configure({
 });
 
 Router.route('/', {
+    data: {
+        homepage: true
+    },
     action: function(){
         this.render('home');
     }
