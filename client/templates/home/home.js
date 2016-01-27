@@ -31,16 +31,16 @@ Template.home.onRendered(function() {
                     }
                 ]
             },
-            title: {
-                identifier: 'title',
+            subject: {
+                identifier: 'subject',
                 rules: [
                     {
                         type   : 'empty',
-                        prompt : 'Please enter your message title'
+                        prompt : 'Please enter your message subject'
                     },
                     {
                         type   : 'maxLength[10]',
-                        prompt : 'Title must be less than {ruleValue} characters'
+                        prompt : 'Subject must be less than {ruleValue} characters'
                     }
                 ]
             },

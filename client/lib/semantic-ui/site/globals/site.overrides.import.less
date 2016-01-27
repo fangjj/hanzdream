@@ -32,12 +32,37 @@ a.home-btn{
   padding: 2px;
   text-align: center;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: @mobileBreakpoint) and (max-width: @largestMobileScreen) {
   .ui.grid.container {
     //margin: 14px 0 !important;
   }
+  .mobile.only.homepage {
+    .menu {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .navbar {
+      .item:hover {
+        border-bottom: none !important;
+        background: transparent !important;
+      }
+      .item:before {
+        background: none !important;
+      }
+    }
+
+  }
+  .vertical.menu.homepage {
+    background: rgba(0,0,0,.5) !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
 }
-.white {
+.transparent {
+  color: transparent !important;
+}
+.white:not(.transparent) {
   color: white !important;
   .sub.header {
     color: rgba(255,255,255,0.6) !important;
@@ -61,7 +86,6 @@ a.home-btn{
 /* nav & sidenav END */
 
 /* home */
-
 #bg-img {
   margin-top: -60px;
   height: 550px;
@@ -71,9 +95,9 @@ a.home-btn{
     width: 100%;
     position: absolute;
     z-index: 0;
-    top: 130px;
+    top: 170px;
   }
-  .bg {
+  img.bg {
     width: 100%;
   }
 }
@@ -142,7 +166,7 @@ a.home-btn{
     }
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: @mobileBreakpoint) and (max-width: @largestMobileScreen) {
   #social-media-icons {
     label {
       display: none;
@@ -152,6 +176,15 @@ a.home-btn{
     }
     .icon-link {
       height: 5px;
+    }
+  }
+  #bg-img {
+    .headers {
+      top: 100px;
+    }
+    img.bg {
+      width: auto;
+      height: 100%;
     }
   }
 }
@@ -187,7 +220,7 @@ audio{
     max-width: 751px;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: @mobileBreakpoint) and (max-width: @largestMobileScreen) {
   #my-resume {
     height: 700px;
   }

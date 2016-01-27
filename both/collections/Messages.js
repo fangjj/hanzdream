@@ -5,7 +5,7 @@ Messages.attachSchema(new SimpleSchema({
         type: String,
         max: 20
     },
-    title: {
+    subject: {
         type: String,
         max: 20
     },

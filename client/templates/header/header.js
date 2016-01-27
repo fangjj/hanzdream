@@ -1,6 +1,27 @@
 Template.header.onRendered(function(){
     let currentNav = Router.current().route._path;
     $("a[href='" + currentNav + "']").addClass('active');
+    $('.ui.sidebar').sidebar({
+        defaultTransition: {
+            computer: {
+                left   : 'overlay' // 'uncover' 'overlay'
+            },
+            mobile: {
+                left   : 'overlay'
+            }
+        },
+        onVisible: function(){
+            $('body').css('overflow','hidden');
+            $('#open-sidebar').removeClass('fadeIn').addClass('fadeOut');
+
+        },
+        onHide: function(){
+            $('body').css('overflow','initial');
+            setTimeout(function() {
+                $('#open-sidebar').removeClass('fadeOut').addClass('fadeIn');
+            }, 300);
+        }
+    });
     $('#select-lang').dropdown();
 });
 
@@ -22,22 +43,7 @@ Template.header.events({
     "click #open-sidebar, touchend #open-sidebar": function(event, template){
         event.preventDefault();
         //event.stopPropagation();
-        $('.ui.sidebar').sidebar('setting', {
-            defaultTransition: {
-                computer: {
-                    left   : 'uncover'
-                },
-                mobile: {
-                    left   : 'overlay'
-                }
-            },
-            onShow: function(){
-                $('body').css('overflow','hidden');
-            },
-            onHidden: function(){
-                $('body').css('overflow','initial');
-            }
-        }).sidebar('toggle');
+        $('.ui.sidebar').sidebar('toggle');
     },
     "mouseenter .ui.dropdown": function(){
         $('#select-lang').dropdown('show');

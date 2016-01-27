@@ -26,11 +26,10 @@
                     </div>
                 </div>
             </div>
-            <div class="mobile only row">
-                <div class="ui inverted navbar menu">
-
-                    <a id="open-sidebar" class="left item">
-                        <i class="sidebar icon"></i>
+            <div class="mobile only row {{#if homepage}}homepage{{/if}}">
+                <div class="ui navbar menu">
+                    <a id="open-sidebar" class="left item animated">
+                        <i class="sidebar {{#if homepage}}white{{/if}} icon"></i>
                     </a>
                 </div>
             </div>
@@ -38,7 +37,7 @@
 </template>
 
 <template name="sidebar">
-    <div class="ui sidebar thin inverted vertical menu">
+    <div class="ui sidebar thin inverted vertical menu {{#if homepage}}homepage{{/if}}">
             <a href="/" class="item">
                 <i href="/" class="home icon"></i>
                 {{_ "home" }}
