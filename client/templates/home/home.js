@@ -1,4 +1,7 @@
 Template.home.onRendered(function() {
+    //TODO: classes change
+    $('#avatar').prop('class', 'sixteen wide mobile seven wide tablet six wide computer column');
+    $('#intro').prop('class', 'sixteen wide mobile nine wide tablet ten wide computer column');
     $('.contact.form').form({
         on: 'blur', // 'submit','change','blur'
         inline: 'true',
@@ -58,7 +61,7 @@ Template.home.onRendered(function() {
                 ]
             }
         }
-    })
+    });
 });
 
 Template.home.events({
