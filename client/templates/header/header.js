@@ -68,6 +68,10 @@ Template.header.events({
             .fail(function (error_message) {
                 console.log(error_message);
             });
+    },
+    "click #logout": function(event) {
+        event.preventDefault();
+        Meteor.logout();
     }
 });
 

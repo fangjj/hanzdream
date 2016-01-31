@@ -6,8 +6,8 @@
                         <a href="/" class="item home-btn">
                             <i href="/" class="large home icon"></i>Hanzdream
                         </a>
-                        <a href="/music" class="item">
-                            {{_ "music" }}
+                        <a href="/blog" class="item">
+                            {{_ "blog" }}
                         </a>
                         <a href="/projects" class="item">
                             {{_ "projects" }}
@@ -15,6 +15,7 @@
                         <a href="/resume" class="item">
                             {{_ "resume" }}
                         </a>
+
                         <div id="select-lang" class="ui right dropdown item">
                             {{_ "language" }}
                             <i class="dropdown icon"></i>
@@ -23,6 +24,11 @@
                                 <div id="select-cn" class="item"><i class="cn flag"></i>{{_ "zh" }}</div>
                             </div>
                         </div>
+                        {{#if currentUser}}\
+                            <a id="logout" class="item">
+                                Logout
+                            </a>
+                        {{/if}}
                     </div>
                 </div>
             </div>
@@ -42,8 +48,8 @@
                 <i href="/" class="home icon"></i>
                 {{_ "home" }}
             </a>
-            <a href="/music" class="item">
-                {{_ "music" }}
+            <a href="/blog" class="item">
+                {{_ "blog" }}
             </a>
             <a href="/projects" class="item">
                 {{_ "projects" }}

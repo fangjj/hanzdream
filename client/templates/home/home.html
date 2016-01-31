@@ -15,114 +15,197 @@
                         </div>
                     </div>
                     <div id="intro">
-                        <h2 class="ui center aligned header column">
+                        <div class="ui center aligned container column">
                             <div class="content">
-                                <h3 class="white center aligned">{{_ "self-introduction"}}</h3>
+                                <h4 class="white center aligned">{{_ "self-introduction"}}</h4>
                             </div>
-                        </h2>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="ui grid container">
-        <div class="ui doubling row skills">
-            <div class="eight wide mobile four wide tablet four wide computer column">
-                <h4><i class="terminal icon"></i>Server</h4>
-                <p><i class="green check square icon"></i>Ubuntu, CentOS</p>
-                <p><i class="green check square icon"></i>DNS Config</p>
-                <p><i class="green check square icon"></i>Nginx/SSL</p>
-                <p><i class="green check square icon"></i>MongoDB, MySQL</p>
-            </div>
-            <div class="eight wide mobile four wide tablet four wide computer column">
-                <h4><i class="settings icon"></i>Frameworks</h4>
-                <p><i class="green check square icon"></i>Meteor (node.js)</p>
-                <p><i class="green check square icon"></i>React</p>
-                <p><i class="green check square icon"></i>Sass/Less</p>
-                <p><i class="green check square icon"></i>JQuery</p>
-            </div>
-            <div class="eight wide mobile four wide tablet four wide computer column">
-                <h4><i class="plug icon"></i>API Plugins</h4>
-                <p><i class="green check square icon"></i>Google Maps</p>
-                <p><i class="green check square icon"></i>Yelp</p>
-                <p><i class="green check square icon"></i>Stripe</p>
-                <!--<p><i class="green check square icon"></i>Edmunds</p>-->
-                <p><i class="green check square icon"></i>Facebook</p>
-            </div>
-            <div class="eight wide mobile four wide tablet four wide computer column">
-                <h4><i class="code icon"></i>UI</h4>
-                <p><i class="green check square icon"></i>Semantic UI</p>
-                <p><i class="green check square icon"></i>Bootstrap</p>
-                <p><i class="green check square icon"></i>Materialize</p>
-                <p><i class="green check square icon"></i>Ionic</p>
-            </div>
-        </div>
-    <div class="ui divider"></div>
-    <div class="ui stackable row">
-        <div class="ui center aligned four wide column contact-me">
-            <h2>Contact Me</h2>
-            <p>Hi there, welcome to contact me!</p>
-            <div class="ui grid">
-                <div id="social-media-icons" class="centered row">
-                    <div class="three wide mobile twelve wide computer column" tabindex="0">
-                        <a class="icon-link" href="https://www.facebook.com/hanzhang.luo" target="_blank">
-                            <i class="facebook square icon"></i>
-                            <label>Facebook</label>
-                        </a>
-                        <div class="ui grey pointing label animated">
-                            <a class="label-link" href="https://www.facebook.com/hanzhang.luo" target="_blank">Facebook</a>
+        <div id="articles-rating-wrapper" class="centered row">
+            <div id="latest-articles">
+                <h3>Latest Articles</h3>
+                <div class="ui people shape">
+                    <div class="sides">
+                        <div class="side">
+                            <div class="ui card">
+                                <div class="content">
+                                    <div class="header">React</div>
+                                    <div class="meta">
+                                        <a>Acquaintances</a>
+                                    </div>
+                                    <div class="description">
+                                        Steve Jobes is a fictional character designed to resemble someone familiar to readers.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="three wide mobile twelve wide computer column" tabindex="1">
-                        <a class="icon-link" href="https://github.com/lhz516/" target="_blank">
-                            <i class="github icon"></i>
-                            <label>Github</label>
-                        </a>
-                        <div class="ui grey pointing label animated">
-                            <a class="label-link" href="https://github.com/lhz516/" target="_blank">Github</a>
+                        <div class="side">
+                            <div class="ui card">
+                                <div class="content">
+                                    <a class="header">Stevie Feliciano</a>
+                                    <div class="meta">
+                                        <span class="date">Joined in 2014</span>
+                                    </div>
+                                    <div class="description">
+                                        Stevie Feliciano is a library scientist living in New York City. She likes to spend her time reading, running, and writing.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="three wide mobile twelve wide computer column" tabindex="2">
-                        <a class="icon-link" href="https://www.linkedin.com/in/hanzhang-luo-81103082?trk=hp-identity-name" target="_blank">
-                            <i class="linkedin square icon"></i>
-                            <label>LinkedIn</label>
-                        </a>
-                        <div class="ui grey pointing label animated">
-                            <a class="label-link" href="https://www.linkedin.com/in/hanzhang-luo-81103082?trk=hp-identity-name" target="_blank">LinkedIn</a>
+                        <div class="side active">
+                            <div class="ui card">
+                                <div class="content">
+                                    <a class="header">Stevie Feliciano111</a>
+                                    <div class="meta">
+                                        <span class="date">Joined in 2014</span>
+                                    </div>
+                                    <div class="description">
+                                        Stevie Feliciano is a library scientist living in New York City. She likes to spend her time reading, running, and writing.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-        </div>
-
-        <div class="ten wide column">
-            <form class="ui contact form">
-                <div class="fields">
-                        <div class="six wide field">
-                        <label>Your Name</label>
-                        <input placeholder="Your Name" name="name" type="text">
+            <div id="rating-container">
+                <h3>My Skill Rating</h3>
+                <div id="progress-container" class="">
+                    Full-stack Development
+                    <div class="ui green progress" data-percent="90">
+                        <div class="bar"></div>
                     </div>
-                    <div class="ten wide field">
-                        <label>Contact Email</label>
-                        <input placeholder="Contact Email" name="email" type="text">
+                    Project Management
+                    <div class="ui progress" data-percent="80">
+                        <div class="lightgreen bar"></div>
+                    </div>
+                    Project Management
+                    <div class="ui olive progress" data-percent="70">
+                        <div class="bar"></div>
+                    </div>
+                    Project Management
+                    <div class="ui progress" data-percent="60">
+                        <div class="darkolive bar"></div>
                     </div>
                 </div>
-                <div class="field">
-                    <label>Subject</label>
-                    <input placeholder="Subject" name="subject" type="text">
-                </div>
-                <div class="field">
-                    <label>Message</label>
-                    <textarea rows="4" name="message"></textarea>
-                </div>
-                <button class="ui green button" type="submit">Submit</button>
-                <div class="ui error message"></div>
-            </form>
+            </div>
         </div>
     </div>
+    <div class="ui grid skills">
+        <div class="ui grid container">
+            <div class="doubling row">
+                <div class="eight wide mobile four wide tablet four wide computer column">
+                    <h3 class="ui center aligned icon header">
+                        <i class="circular terminal icon"></i>
+                        Server
+                    </h3>
+                    <p>Ubuntu, CentOS</p>
+                    <p>DNS Config</p>
+                    <p>Nginx/SSL</p>
+                    <p>MongoDB, MySQL</p>
+                </div>
+                <div class="eight wide mobile four wide tablet four wide computer column">
+                    <h3 class="ui center aligned icon header">
+                        <i class="circular settings icon"></i>
+                        Frameworks
+                    </h3>
+                    <p>Meteor (node.js)</p>
+                    <p>React</p>
+                    <p>Sass/Less</p>
+                    <p>JQuery</p>
+                </div>
+                <div class="eight wide mobile four wide tablet four wide computer column">
+                    <h3 class="ui center aligned icon header">
+                        <i class="circular plug icon"></i>
+                        API Plugins
+                    </h3>
+                    <p>Google Maps</p>
+                    <p>Yelp</p>
+                    <p>Stripe</p>
+                    <!--<p>Edmunds</p>-->
+                    <p>Facebook</p>
+                </div>
+                <div class="eight wide mobile four wide tablet four wide computer column">
+                    <h3 class="ui center aligned icon header">
+                        <i class="circular code icon"></i>
+                        UI
+                    </h3>
+                    <p>Semantic UI</p>
+                    <p>Bootstrap</p>
+                    <p>Materialize</p>
+                    <p>Ionic</p>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="ui grid container">
+        <div id="contact-wrapper" class="row">
+            <div id="social-media-col">
+                <h2>Contact Me</h2>
+                <p>Hi there, welcome to contact me!</p>
+                <div class="ui grid">
+                    <div id="social-media-icons" class="centered row">
+                        <div class="three wide mobile twelve wide computer column" tabindex="0">
+                            <a class="icon-link" href="https://www.facebook.com/hanzhang.luo" target="_blank">
+                                <i class="facebook square icon"></i>
+                                <label>Facebook</label>
+                            </a>
+                            <div class="ui grey pointing label animated">
+                                <a class="label-link" href="https://www.facebook.com/hanzhang.luo" target="_blank">Facebook</a>
+                            </div>
+                        </div>
+                        <div class="three wide mobile twelve wide computer column" tabindex="1">
+                            <a class="icon-link" href="https://github.com/lhz516/" target="_blank">
+                                <i class="github icon"></i>
+                                <label>Github</label>
+                            </a>
+                            <div class="ui grey pointing label animated">
+                                <a class="label-link" href="https://github.com/lhz516/" target="_blank">Github</a>
+                            </div>
+                        </div>
+                        <div class="three wide mobile twelve wide computer column" tabindex="2">
+                            <a class="icon-link" href="https://www.linkedin.com/in/hanzhang-luo-81103082?trk=hp-identity-name" target="_blank">
+                                <i class="linkedin square icon"></i>
+                                <label>LinkedIn</label>
+                            </a>
+                            <div class="ui grey pointing label animated">
+                                <a class="label-link" href="https://www.linkedin.com/in/hanzhang-luo-81103082?trk=hp-identity-name" target="_blank">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="contact-form-col">
+                <form class="ui contact form">
+                    <div class="fields">
+                            <div class="six wide field">
+                            <label>Your Name</label>
+                            <input placeholder="Your Name" name="name" type="text">
+                        </div>
+                        <div class="ten wide field">
+                            <label>Contact Email</label>
+                            <input placeholder="Contact Email" name="email" type="text">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Subject</label>
+                        <input placeholder="Subject" name="subject" type="text">
+                    </div>
+                    <div class="field">
+                        <label>Message</label>
+                        <textarea rows="4" name="message"></textarea>
+                    </div>
+                    <button class="ui teal button" type="submit">Submit</button>
+                    <div class="ui error message"></div>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="ui msg small modal">
         <div class="ui content center aligned container">
                 <i class="huge check circle icon"></i>

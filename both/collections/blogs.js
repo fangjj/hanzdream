@@ -1,22 +1,15 @@
-Messages = new Mongo.Collection("messages");
+Blogs = new Mongo.Collection("blogs");
 
-Messages.attachSchema(new SimpleSchema({
-    name: {
-        type: String,
-        max: 20
+Blogs.attachSchema(new SimpleSchema({
+    title: {
+        type: String
     },
-    subject: {
-        type: String,
-        max: 20
+    content: {
+        type: String
     },
-    email: {
+    tag: {
         type: String,
-        regEx: SimpleSchema.RegEx.Email,
-        max: 30
-    },
-    message: {
-        type: String,
-        max: 200
+        defaultValue: 'none'
     },
     createdAt: {
         type: Date,
@@ -28,7 +21,8 @@ Messages.attachSchema(new SimpleSchema({
             } else {
                 this.unset();  // Prevent user from supplying their own value
             }
-        }
+        },
+        optional: true
     },
     // Force value to be current date (on server) upon update
     // and don't allow it to be set upon insert.

@@ -1,7 +1,40 @@
+var cubeSlides;
+
 Template.home.onRendered(function() {
     //TODO: classes change
     $('#avatar').prop('class', 'sixteen wide mobile seven wide tablet six wide computer column');
     $('#intro').prop('class', 'sixteen wide mobile nine wide tablet ten wide computer column');
+    $('#latest-articles').prop('class', 'sixteen wide mobile eight wide tablet six wide computer column');
+    $('#rating-container').prop('class','sixteen wide mobile eight wide tablet six wide computer column');
+    $('#social-media-col').prop('class','center aligned sixteen wide mobile six wide tablet four wide computer column');
+    $('#contact-form-col').prop('class','sixteen wide mobile ten wide tablet twelve wide computer column');
+
+    $('.ui.progress').progress({
+        //autoSuccess: false,
+        showActivity: false
+    });
+
+    $('.shape').shape({
+        onChange: function() {
+            setTimeout(function() {
+                $('.shape').shape('flip right');
+            }, 5000);
+        }
+    });
+
+    cubeSlides = Meteor.setTimeout(function() {
+        $('.shape').shape('flip right');
+    }, 5000);
+
+    //cubeSlides = Meteor.setInterval(function() {
+    //    $('.shape').shape('flip right');
+    //}, 5000);
+    //Tracker.autorun(function() {
+    //    console.log('auto run');
+    //    setTimeout(function() {
+    //        $('.shape').shape('flip right');
+    //    }, 2000);
+    //});
     $('.contact.form').form({
         on: 'blur', // 'submit','change','blur'
         inline: 'true',
@@ -94,4 +127,8 @@ Template.home.events({
             //}, 500)
         }
     }
+});
+
+Template.home.onDestroyed(function() {
+    Meteor.clearTimeout(cubeSlides);
 });
