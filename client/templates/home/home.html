@@ -28,7 +28,7 @@
     <div class="ui grid container">
         <div id="articles-rating-wrapper" class="centered row">
             <div id="latest-articles">
-                <h3>Latest Articles</h3>
+                <h3>{{_ "latest-articles"}}</h3>
                 <div class="ui people shape">
                     <div class="sides">
                         <div class="side">
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div id="rating-container">
-                <h3>My Skill Rating</h3>
+                <h3>{{_ "my-skills-rating"}}</h3>
                 <div id="progress-container" class="">
                     Full-stack Development
                     <div class="ui green progress" data-percent="90">
@@ -99,30 +99,30 @@
     <div class="ui grid skills">
         <div class="ui grid container">
             <div class="doubling row">
-                <div class="eight wide mobile four wide tablet four wide computer column">
+                <div class="skill">
                     <h3 class="ui center aligned icon header">
                         <i class="circular terminal icon"></i>
-                        Server
+                        {{_ "server"}}
                     </h3>
                     <p>Ubuntu, CentOS</p>
                     <p>DNS Config</p>
                     <p>Nginx/SSL</p>
                     <p>MongoDB, MySQL</p>
                 </div>
-                <div class="eight wide mobile four wide tablet four wide computer column">
+                <div class="skill">
                     <h3 class="ui center aligned icon header">
                         <i class="circular settings icon"></i>
-                        Frameworks
+                        {{_ "frameworks"}}
                     </h3>
                     <p>Meteor (node.js)</p>
                     <p>React</p>
                     <p>Sass/Less</p>
                     <p>JQuery</p>
                 </div>
-                <div class="eight wide mobile four wide tablet four wide computer column">
+                <div class="skill">
                     <h3 class="ui center aligned icon header">
                         <i class="circular plug icon"></i>
-                        API Plugins
+                        {{_ "api-plugins"}}
                     </h3>
                     <p>Google Maps</p>
                     <p>Yelp</p>
@@ -130,10 +130,10 @@
                     <!--<p>Edmunds</p>-->
                     <p>Facebook</p>
                 </div>
-                <div class="eight wide mobile four wide tablet four wide computer column">
+                <div class="skill">
                     <h3 class="ui center aligned icon header">
                         <i class="circular code icon"></i>
-                        UI
+                        {{_ "ui"}}
                     </h3>
                     <p>Semantic UI</p>
                     <p>Bootstrap</p>
@@ -146,8 +146,8 @@
     <div class="ui grid container">
         <div id="contact-wrapper" class="row">
             <div id="social-media-col">
-                <h2>Contact Me</h2>
-                <p>Hi there, welcome to contact me!</p>
+                <h2>{{_ "contact-me"}}</h2>
+                <p>{{_ "contact-me-description"}}</p>
                 <div class="ui grid">
                     <div id="social-media-icons" class="centered row">
                         <div class="three wide mobile twelve wide computer column" tabindex="0">
@@ -184,23 +184,23 @@
                 <form class="ui contact form">
                     <div class="fields">
                             <div class="six wide field">
-                            <label>Your Name</label>
-                            <input placeholder="Your Name" name="name" type="text">
+                            <label>{{_ "your-name"}}</label>
+                            <input placeholder="{{_ "your-name"}}" name="name" type="text">
                         </div>
                         <div class="ten wide field">
-                            <label>Contact Email</label>
-                            <input placeholder="Contact Email" name="email" type="text">
+                            <label>{{_ "contact-email"}}</label>
+                            <input placeholder="{{_ "contact-email"}}" name="email" type="text">
                         </div>
                     </div>
                     <div class="field">
-                        <label>Subject</label>
-                        <input placeholder="Subject" name="subject" type="text">
+                        <label>{{_ "subject"}}</label>
+                        <input placeholder="{{_ "subject"}}" name="subject" type="text">
                     </div>
                     <div class="field">
-                        <label>Message</label>
-                        <textarea rows="4" name="message"></textarea>
+                        <label>{{_ "message"}}</label>
+                        <textarea rows="4" name="message" placeholder="{{_ "message"}}"></textarea>
                     </div>
-                    <button class="ui teal button" type="submit">Submit</button>
+                    <button class="ui teal button" type="submit">{{_ "submit"}}</button>
                     <div class="ui error message"></div>
                 </form>
             </div>

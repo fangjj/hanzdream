@@ -6,6 +6,7 @@ Template.home.onRendered(function() {
     $('#intro').prop('class', 'sixteen wide mobile nine wide tablet ten wide computer column');
     $('#latest-articles').prop('class', 'sixteen wide mobile eight wide tablet six wide computer column');
     $('#rating-container').prop('class','sixteen wide mobile eight wide tablet six wide computer column');
+    $('.skill').prop('class', 'eight wide mobile four wide tablet four wide computer column');
     $('#social-media-col').prop('class','center aligned sixteen wide mobile six wide tablet four wide computer column');
     $('#contact-form-col').prop('class','sixteen wide mobile ten wide tablet twelve wide computer column');
 
@@ -36,11 +37,11 @@ Template.home.onRendered(function() {
     //    }, 2000);
     //});
     $('.contact.form').form({
-        on: 'blur', // 'submit','change','blur'
+        on: 'submit', // 'submit','change','blur'
         inline: 'true',
         onSuccess: function(event, fields) {
             event.preventDefault();
-            Meteor.call('messageInsert', fields, (err, res) => {
+            Meteor.call('messageInsert', fields, function(err, res) {
                if(err) {
                    alert(err.message);
                } else {
@@ -54,7 +55,11 @@ Template.home.onRendered(function() {
                 rules: [
                     {
                         type   : 'empty',
-                        prompt : 'Please enter your name'
+                        prompt : TAPi18n.__('your-name-err-empty')
+                    },
+                    {
+                        type   : 'maxLength[20]',
+                        prompt : TAPi18n.__('your-name-err-length')
                     }
                 ]
             },
@@ -62,8 +67,16 @@ Template.home.onRendered(function() {
                 identifier: 'email',
                 rules: [
                     {
+                        type   : 'empty',
+                        prompt : TAPi18n.__('contact-email-err-empty')
+                    },
+                    {
                         type   : 'email',
-                        prompt : 'Please enter a valid email'
+                        prompt : TAPi18n.__('contact-email-err-format')
+                    },
+                    {
+                        type   : 'maxLength[30]',
+                        prompt : TAPi18n.__('contact-email-err-length')
                     }
                 ]
             },
@@ -72,11 +85,11 @@ Template.home.onRendered(function() {
                 rules: [
                     {
                         type   : 'empty',
-                        prompt : 'Please enter your message subject'
+                        prompt : TAPi18n.__('subject-err-empty')
                     },
                     {
-                        type   : 'maxLength[10]',
-                        prompt : 'Subject must be less than {ruleValue} characters'
+                        type   : 'maxLength[20]',
+                        prompt : TAPi18n.__('subject-err-length')
                     }
                 ]
             },
@@ -85,11 +98,11 @@ Template.home.onRendered(function() {
                 rules: [
                     {
                         type   : 'empty',
-                        prompt : 'Please enter your message'
+                        prompt : TAPi18n.__('message-err-empty')
                     },
                     {
                         type   : 'maxLength[100]',
-                        prompt : 'Message must be less than {ruleValue} characters'
+                        prompt : TAPi18n.__('message-err-length')
                     }
                 ]
             }
