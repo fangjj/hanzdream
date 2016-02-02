@@ -54,7 +54,10 @@ Template.header.events({
     "click #select-en": function(){
         TAPi18n.setLanguage("en")
             .done(function () {
-
+                localStorage.setItem('hanzDreamLang','en');
+                if(Router.current().location.get().pathname == '/'){
+                    $('.contact.form').form(formInit(TAPi18n));
+                }
             })
             .fail(function (error_message) {
                 console.log(error_message);
@@ -64,6 +67,9 @@ Template.header.events({
         TAPi18n.setLanguage("zh")
             .done(function () {
                 localStorage.setItem('hanzDreamLang','zh');
+                if(Router.current().location.get().pathname == '/'){
+                    $('.contact.form').form(formInit(TAPi18n));
+                }
             })
             .fail(function (error_message) {
                 console.log(error_message);
@@ -79,7 +85,7 @@ Template.sidebar.events({
     "click #select-en, touchend #select-en": function(){
         TAPi18n.setLanguage("en")
             .done(function () {
-                //$('.ui.sidebar').sidebar('hide');
+                localStorage.setItem('hanzDreamLang','en');
             })
             .fail(function (error_message) {
                 console.log(error_message);

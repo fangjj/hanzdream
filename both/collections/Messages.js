@@ -28,7 +28,8 @@ Messages.attachSchema(new SimpleSchema({
             } else {
                 this.unset();  // Prevent user from supplying their own value
             }
-        }
+        },
+        optional: true
     },
     // Force value to be current date (on server) upon update
     // and don't allow it to be set upon insert.

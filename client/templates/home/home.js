@@ -1,4 +1,79 @@
-var cubeSlides;
+let cubeSlides;
+
+formInit = function(i18n) {
+    return {
+        on: 'submit', // 'submit','change','blur'
+        inline: 'true',
+        onSuccess: function(event, fields) {
+            event.preventDefault();
+            Meteor.call('messageInsert', fields, function(err, res) {
+                if(err) {
+                    alert(err.message);
+                } else {
+                    $('.msg.modal').modal('show');
+                }
+            });
+        },
+        fields: {
+            name: {
+                identifier: 'name',
+                rules: [
+                    {
+                        type   : 'empty',
+                        prompt : i18n.__('your-name-err-empty')
+                    },
+                    {
+                        type   : 'maxLength[20]',
+                        prompt : i18n.__('your-name-err-length')
+                    }
+                ]
+            },
+            email: {
+                identifier: 'email',
+                rules: [
+                    {
+                        type   : 'empty',
+                        prompt : i18n.__('contact-email-err-empty')
+                    },
+                    {
+                        type   : 'email',
+                        prompt : i18n.__('contact-email-err-format')
+                    },
+                    {
+                        type   : 'maxLength[30]',
+                        prompt : i18n.__('contact-email-err-length')
+                    }
+                ]
+            },
+            subject: {
+                identifier: 'subject',
+                rules: [
+                    {
+                        type   : 'empty',
+                        prompt : i18n.__('subject-err-empty')
+                    },
+                    {
+                        type   : 'maxLength[20]',
+                        prompt : i18n.__('subject-err-length')
+                    }
+                ]
+            },
+            message: {
+                identifier: 'message',
+                rules: [
+                    {
+                        type   : 'empty',
+                        prompt : i18n.__('message-err-empty')
+                    },
+                    {
+                        type   : 'maxLength[100]',
+                        prompt : i18n.__('message-err-length')
+                    }
+                ]
+            }
+        }
+    };
+};
 
 Template.home.onRendered(function() {
     //TODO: classes change
@@ -36,97 +111,31 @@ Template.home.onRendered(function() {
     //        $('.shape').shape('flip right');
     //    }, 2000);
     //});
-    $('.contact.form').form({
-        on: 'submit', // 'submit','change','blur'
-        inline: 'true',
-        onSuccess: function(event, fields) {
-            event.preventDefault();
-            Meteor.call('messageInsert', fields, function(err, res) {
-               if(err) {
-                   alert(err.message);
-               } else {
-                   $('.msg.modal').modal('show');
-               }
-            });
-        },
-        fields: {
-            name: {
-                identifier: 'name',
-                rules: [
-                    {
-                        type   : 'empty',
-                        prompt : TAPi18n.__('your-name-err-empty')
-                    },
-                    {
-                        type   : 'maxLength[20]',
-                        prompt : TAPi18n.__('your-name-err-length')
-                    }
-                ]
-            },
-            email: {
-                identifier: 'email',
-                rules: [
-                    {
-                        type   : 'empty',
-                        prompt : TAPi18n.__('contact-email-err-empty')
-                    },
-                    {
-                        type   : 'email',
-                        prompt : TAPi18n.__('contact-email-err-format')
-                    },
-                    {
-                        type   : 'maxLength[30]',
-                        prompt : TAPi18n.__('contact-email-err-length')
-                    }
-                ]
-            },
-            subject: {
-                identifier: 'subject',
-                rules: [
-                    {
-                        type   : 'empty',
-                        prompt : TAPi18n.__('subject-err-empty')
-                    },
-                    {
-                        type   : 'maxLength[20]',
-                        prompt : TAPi18n.__('subject-err-length')
-                    }
-                ]
-            },
-            message: {
-                identifier: 'message',
-                rules: [
-                    {
-                        type   : 'empty',
-                        prompt : TAPi18n.__('message-err-empty')
-                    },
-                    {
-                        type   : 'maxLength[100]',
-                        prompt : TAPi18n.__('message-err-length')
-                    }
-                ]
-            }
-        }
-    });
+    $('.contact.form').form(formInit(TAPi18n));
 });
 
 Template.home.events({
-   'mouseenter #social-media-icons .column, touchend #social-media-icons .column': function(event) {
-       if($(window).width() < 768) {
-           event.preventDefault();
-           let $elem = $(event.currentTarget);
-           $elem.focus();
-           $elem.children('.icon-link').css('height','40px');
-           $elem.find('i').addClass('active');
+    'click #bg-img i.mail': function(event) {
+        $('html, body').animate({
+            scrollTop: $('#contact-wrapper').offset().top
+        }, 1000);
+    },
+    'mouseenter #social-media-icons .column, touchend #social-media-icons .column': function(event) {
+        if($(window).width() < 768) {
+            event.preventDefault();
+            let $elem = $(event.currentTarget);
+            $elem.focus();
+            $elem.children('.icon-link').css('height','40px');
+            $elem.find('i').addClass('active');
 
-           //$elem.children('.pointing').show().removeClass('fadeOut').addClass('fadeIn');
-           $elem.children('.pointing').fadeIn(300);
-       }
-       //for iPhone safari
-       if($(event.target).is('.label-link')) {
-           window.open($(event.target).attr('href'),'_blank');
-       }
-   },
+            //$elem.children('.pointing').show().removeClass('fadeOut').addClass('fadeIn');
+            $elem.children('.pointing').fadeIn(300);
+        }
+        //for iPhone safari
+        if($(event.target).is('.label-link')) {
+            window.open($(event.target).attr('href'),'_blank');
+        }
+    },
     'mouseleave #social-media-icons .column, blur #social-media-icons .column': function(event) {
         if($(window).width() < 768) {
             event.preventDefault();
