@@ -10,6 +10,9 @@ html{
 body {
 
 }
+#go-to-top {
+  display: none;
+}
 .lightgreen {
   background-color: #73BA21 !important;
 }
@@ -41,10 +44,10 @@ a.home-btn{
   //bottom: 0;
   margin-top: 50px !important;
   width: 100%;
-  padding: 2px;
+  padding: 5px !important;
   text-align: center;
 }
-@media only screen and (min-width: @mobileBreakpoint) and (max-width: @largestMobileScreen) {
+@media only screen and (max-width: @largestMobileScreen) {
   .ui.grid.container {
     //margin: 14px 0 !important;
   }
@@ -69,6 +72,18 @@ a.home-btn{
     background: rgba(0,0,0,.5) !important;
     border: none !important;
     box-shadow: none !important;
+  }
+  #go-to-top {
+    display: block;
+    position: fixed;
+    bottom: 55px;
+    right: 5px;
+    transition-duration: .5s;
+    opacity: 0;
+    z-index: 10;
+    i {
+      cursor: pointer;
+    }
   }
 }
 .transparent {
@@ -114,10 +129,17 @@ a.home-btn{
     z-index: 0;
     top: 170px;
     #avatar {
+      img {
+        box-shadow: 6px 12px 15px 0 rgba(0,0,0,0.24),4px 17px 50px 0 rgba(0,0,0,0.19);
+      }
       h2 {
         font-weight: 500;
         i.mail {
           cursor: pointer;
+          transition-duration: .5s;
+        }
+        i.mail:hover {
+          opacity: .7;
         }
       }
     }
@@ -183,10 +205,10 @@ a.home-btn{
       background-color: rgba(255, 255, 255, 1);
       color: @skillsBackgroundColor;
       box-shadow: none !important;
+      transition-duration: .5s;
     }
     i:hover {
       background-color: rgba(255, 255, 255, 0.81);
-      transition-duration: .5s;
     }
   }
   //i.check {
@@ -207,7 +229,7 @@ a.home-btn{
   margin-bottom: 10px;
 }
 #contact-wrapper {
-  margin-top: 40px;
+  margin: 40px 1em;
 }
 #social-media-col i{
   vertical-align: text-top;
@@ -279,7 +301,7 @@ a.home-btn{
     margin-bottom: 20px;
   }
 }
-@media only screen and (min-width: @tabletBreakpoint) and (max-width: @largestTabletScreen) {
+@media only screen and (max-width: @largestTabletScreen) {
   #bg-img {
     img.bg {
       width: auto;
@@ -365,7 +387,7 @@ audio{
     max-width: 751px;
   }
 }
-@media only screen and (min-width: @mobileBreakpoint) and (max-width: @largestMobileScreen) {
+@media only screen and (max-width: @largestMobileScreen) {
   #my-resume {
     height: 700px;
   }

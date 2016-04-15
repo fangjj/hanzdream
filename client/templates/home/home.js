@@ -111,11 +111,18 @@ Template.home.onRendered(function() {
     //        $('.shape').shape('flip right');
     //    }, 2000);
     //});
+    let $skillIcons = $('.skills i');
+    $skillIcons.css('visibility','hidden');
+    $skillIcons.visibility({
+        onTopVisible: function() {
+            $(this).css('visibility','visible').addClass('animated bounceIn');
+        }
+    });
     $('.contact.form').form(formInit(TAPi18n));
 });
 
 Template.home.events({
-    'click #bg-img i.mail': function(event) {
+    'click #bg-img i.mail, touchend #bg-img i.mail': function(event) {
         $('html, body').animate({
             scrollTop: $('#contact-wrapper').offset().top
         }, 1000);

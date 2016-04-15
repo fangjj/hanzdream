@@ -23,7 +23,7 @@
     "input": false,
     "item": false,
     "label": true,
-    "list": false,
+    "list": true,
     "loader": true,
     "menu": true,
     "message": true,
@@ -47,7 +47,7 @@
     "tab": false,
     "table": false,
     "transition": true,
-    "visibility": false,
+    "visibility": true,
     "visit": false
   },
   "themes": {

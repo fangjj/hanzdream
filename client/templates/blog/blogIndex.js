@@ -23,7 +23,7 @@ Template.blogPostForm.onRendered(() => {
                         prompt : 'Please enter your message subject'
                     },
                     {
-                        type   : 'maxLength[20]',
+                        type   : 'maxLength[50]',
                         prompt : 'Title must be less than {ruleValue} characters'
                     }
                 ]

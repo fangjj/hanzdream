@@ -2,10 +2,24 @@ Blogs = new Mongo.Collection("blogs");
 
 Blogs.attachSchema(new SimpleSchema({
     title: {
-        type: String
+        type: String,
+        max: 50
+    },
+    preview: {
+        type: String,
+        max: 100,
+        autoValue: function() {
+            if(this.field('content').isSet) {
+                return this.field('content').value;
+            } else {
+                this.unset();  // Prevent user from supplying their own value
+            }
+        },
+        optional: true
     },
     content: {
-        type: String
+        type: String,
+        max: 2000
     },
     tag: {
         type: String,
