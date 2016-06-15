@@ -1,4 +1,7 @@
-Blogs = new Mongo.Collection("blogs");
+import { Mongo } from 'meteor/mongo';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
+const Blogs = new Mongo.Collection('blogs');
 
 Blogs.attachSchema(new SimpleSchema({
   title: {
@@ -51,3 +54,5 @@ Blogs.attachSchema(new SimpleSchema({
     optional: true
   }
 }));
+
+export default Blogs;

@@ -1,3 +1,5 @@
+// import { AccountsTemplates } from 'meteor/useraccounts:semantic-ui';
+
 AccountsTemplates.configure({
   // Behavior
   confirmPassword: true,
@@ -33,16 +35,16 @@ AccountsTemplates.configure({
 
   // Hooks
   //onLogoutHook: myLogoutFunc,
-  onSubmitHook: function(error, state){
+  onSubmitHook(error, state) {
     if (!error) {
-      if (state === "signIn") {
+      if (state === 'signIn') {
         Router.go('/');
       }
     }else{
       console.log(error.message);
     }
   },
-  preSignUpHook: function(password, doc){
+  preSignUpHook(password, doc) {
 
   }
 });

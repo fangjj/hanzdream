@@ -1,4 +1,4 @@
-Meteor.startup(function() {
+Meteor.startup(() => {
   let userLang;
   if(localStorage.getItem('hanzDreamLang')){
     userLang = localStorage.getItem('hanzDreamLang');
@@ -7,11 +7,11 @@ Meteor.startup(function() {
   }
   TAPi18n.setLanguage(userLang)
     .done(function () {
-      //Session.set("showLoadingIndicator", false);
+      // Session.set("showLoadingIndicator", false);
     })
     .fail(function (error_message) {
       // Handle the situation
       console.log(error_message);
     });
-  //Session.setDefault('currentNav','/');
+  // Session.setDefault('currentNav','/');
 });

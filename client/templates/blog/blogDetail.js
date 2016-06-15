@@ -1,3 +1,5 @@
+import Blogs from '../../../both/collections/blogs.js';
+
 Template.blogDetail.onRendered(function() {
   let self = this;
   let blogId = Router.current().params._id;

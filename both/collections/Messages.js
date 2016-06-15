@@ -1,4 +1,7 @@
-Messages = new Mongo.Collection("messages");
+import { Mongo } from 'meteor/mongo';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
+const Messages = new Mongo.Collection("messages");
 
 Messages.attachSchema(new SimpleSchema({
   name: {
@@ -44,3 +47,5 @@ Messages.attachSchema(new SimpleSchema({
     optional: true
   }
 }));
+
+export default Messages;

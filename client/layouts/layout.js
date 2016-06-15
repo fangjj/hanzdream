@@ -21,7 +21,7 @@ Template.goToTop.onRendered(function() {
 });
 
 Template.goToTop.events({
-  'click #go-to-top i, touchend #go-to-top i': function(event) {
+  'click #go-to-top i, touchend #go-to-top i': (event) => {
     $('html, body').animate({
       scrollTop: 0
     }, 500);

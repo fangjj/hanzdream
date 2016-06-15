@@ -1,3 +1,6 @@
+import { Router } from 'meteor/iron:router';
+import Blogs from '../both/collections/blogs.js';
+
 Router.configure({
   layoutTemplate: 'layout'
 });
@@ -6,41 +9,41 @@ Router.route('/', {
   data: {
     homepage: true
   },
-  action: function(){
+  action() {
     this.render('home');
   }
 });
 
 Router.route('/login', {
-  action: function(){
+  action() {
     this.render('login');
   }
 });
 
 Router.route('/blog', {
-  waitOn: function() {
+  waitOn() {
     this.subscribe('blogs');
   },
-  data: function() {
+  data() {
     return {
-      blogs: Blogs.find({},{sort: {createdAt: -1}})
-    }
+      blogs: Blogs.find({}, { sort: { createdAt: -1 } })
+    };
   },
-  action: function(){
+  action() {
     this.render('blogIndex');
   }
 });
 
 Router.route('/blog/:_id', {
-  waitOn: function() {
+  waitOn() {
     Meteor.subscribe('blog', this.params._id);
   },
-  data: function() {
+  data() {
     return {
       blog: Blogs.findOne(this.params._id)
-    }
+    };
   },
-  action: function(){
+  action() {
     this.render('blogDetail');
   }
 });
@@ -49,19 +52,19 @@ Router.route('/music', {
   data: {
     url: '/music'
   },
-  action: function(){
+  action() {
     this.render('music');
   }
 });
 
 Router.route('/projects', {
-  action: function(){
+  action() {
     this.render('projects');
   }
 });
 
 Router.route('/resume', {
-  action: function(){
+  action() {
     this.render('resume');
   }
 });
